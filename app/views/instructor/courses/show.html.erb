@@ -1,12 +1,25 @@
 <script>
   $(function() {
-    $('.sections, .lessons').sortable({
+    $('.lessons').sortable({
       update: function( event, ui) {
         $.ajax({
           type: 'PUT',
           url: ui.item.data('update-url'),
           dataType: 'json',
           data: { lesson: { row_order_position: ui.item.index() } }
+        });
+        alert("UpdateUrl " + ui.item.data('update-url') + " Index: " + ui.item.index());
+      }
+    });
+  });
+  $(function() {
+    $('.sections').sortable({
+      update: function( event, ui) {
+        $.ajax({
+          type: 'PUT',
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: { section: { row_order_position: ui.item.index() } }
         });
         alert("UpdateUrl " + ui.item.data('update-url') + " Index: " + ui.item.index());
       }

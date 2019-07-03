@@ -13,25 +13,28 @@ class Instructor::SectionsController < ApplicationController
   end
 
   def update
-    current_section.course.update_attributes(section_params)
+    puts params
+    current_section.update_attributes(section_params)
     render plain: 'updated!'
   end
 
   private
 
   def require_authorized_for_current_section
-    if current_section.course.user != current_user
+    @course = Course.find(current_section[:course_id])
+    if @course.user != current_user
       render plain: "Unauthorized", status: :Unauthorized
     end
   end
 
   
-  helper_method :current_course
-  def current_course
-    if params[:course_id]
-      @current_course ||= Course.find(params[:course_id])
+  helper_method :current_section
+  def current_section
+    if params[:id]
+      @current_section ||= Section.find(params[:id])
     else
-      current_section.course
+      puts "No id"
+      puts params
     end
   end
 
