@@ -28,18 +28,17 @@ class Instructor::SectionsController < ApplicationController
   end
 
   
-  helper_method :current_section
-  def current_section
-    if params[:id]
-      @current_section ||= Section.find(params[:id])
+  helper_method :current_course
+  def current_course
+    if params[:course_id]
+      @current_course ||= Course.find(params[:course_id])
     else
-      puts "No id"
-      puts params
+      current_section.course
     end
   end
 
-
   def section_params
-    params.require(:section).permit(:title)
+    params.require(:section).permit(:title, :row_order_position)
   end
 end
+
