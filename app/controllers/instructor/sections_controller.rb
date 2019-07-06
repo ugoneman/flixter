@@ -20,6 +20,10 @@ class Instructor::SectionsController < ApplicationController
 
   private
 
+  def current_section
+    @current_section ||= Section.find(params[:id])
+  end
+
   def require_authorized_for_current_section
     @course = Course.find(current_section[:course_id])
     if @course.user != current_user
