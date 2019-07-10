@@ -1,7 +1,7 @@
 <script>
   $(function() {
     $('.new-lesson-button').click(function( event ) {
-      var lessonUrl = $( event.target .data('lesson-ur');
+      var lessonUrl = $( event.target).data('lesson-url');
       $('#newLessonForm').attr('action', lessonUrl);
     });
 
@@ -47,7 +47,7 @@
   <ul class="sections">
     <% current_course.sections.rank(:row_order).each do |section| %>
       <li data-update-url="<%= instructor_section_path section %>" class="section-li">
-        <div class="header float-right">
+        <div class="header float-left">
           <span class="fa fa-ellipsis-v"></span>
           <%= section.title %>
         </div>

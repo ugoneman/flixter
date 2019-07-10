@@ -81,3 +81,4 @@ gem "carrierwave-aws"
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'ranked-model'
 gem 'jquery-ui-rails'
+gem "font-awesome-rails"

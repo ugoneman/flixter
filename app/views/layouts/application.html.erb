@@ -54,9 +54,43 @@
 
     <div id="footer">
       <div class="container">
-        <b>Teachers</b>
-        <br />
-        <%= link_to 'Teach a Course', new_instructor_course_path %>
+        <div class="row">
+          <div class="col-12 col-sm-3">
+            <b>Teachers</b>
+            <br />
+            <%= link_to 'Teach a Course', new_instructor_course_path %>
+            <br />
+            <%= link_to 'My Dashboard', dashboard_path %>
+          </div>
+          <div class="col-12 col-sm-3">
+            <b>About</b>
+            <br />
+            <%= link_to 'Team', '#' %>
+            <br />
+            <%= link_to 'Careers', '#' %>
+            <br />
+            <%= link_to 'Privacy Policy', privacy_path %>
+          </div>
+          <div class="col-12 col-sm-3">
+            <b>Contact</b>
+            <br />
+            ugoneman@gmail.com
+            <br />
+            Knowledge is Power
+            <br />
+            Cambridge MA, 02113
+          </div>
+          <div class="col-12 col-sm-3">
+            <b>Social</b>
+            <br />
+            <br />
+            <%= link_to 'https://github.com/ugoneman' do %>
+              <span class="fa fa-github-square fa-2x social-button"></span>
+            <% end %>
+            <span class="fa fa-facebook-square fa-2x social-button"></span>
+            <span class="fa fa-twitter-square fa-2x social-button"></span>
+          </div>
+        </div>
       </div>
     </div>
 
